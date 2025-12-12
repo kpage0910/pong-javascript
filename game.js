@@ -290,5 +290,22 @@ function update() {
   requestAnimationFrame(update);
 }
 
-// Show start screen
-drawStartScreen();
+// Show start screen after ensuring the custom font is loaded
+function init() {
+  if (document.fonts && document.fonts.load) {
+    document.fonts
+      .load("60px 'Arcade Classic'")
+      .then(() => {
+        drawStartScreen();
+      })
+      .catch(() => {
+        // If font loading fails, still start the game with fallback font
+        drawStartScreen();
+      });
+  } else {
+    // Fallback for older browsers
+    drawStartScreen();
+  }
+}
+
+init();
