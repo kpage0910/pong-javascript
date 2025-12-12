@@ -2,6 +2,10 @@
 
 A classic Pong game built with HTML5 Canvas and JavaScript.
 
+## Live Demo
+
+Play it here: https://pong-game1.vercel.app/
+
 ## Features
 
 - Play against AI opponent
